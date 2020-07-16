@@ -18,10 +18,10 @@ export interface Snoop<T extends Fn> {
   calls: Call<T>[];
   firstCall: Call<T>;
   lastCall: Call<T>;
-  calledBefore: (other: Snoop<T>) => boolean;
-  calledAfter: (other: Snoop<T>) => boolean;
-  calledImmediatelyBefore: (other: Snoop<T>) => boolean;
-  calledImmediatelyAfter: (other: Snoop<T>) => boolean;
+  calledBefore: (other: Snoop) => boolean;
+  calledAfter: (other: Snoop) => boolean;
+  calledImmediatelyBefore: (other: Snoop) => boolean;
+  calledImmediatelyAfter: (other: Snoop) => boolean;
 }
 
 export function snoop<T extends Fn>(fn: T): Snoop<T>;
