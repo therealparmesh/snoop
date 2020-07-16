@@ -1,12 +1,14 @@
-export interface Call<T extends (...args: any) => any> {
+export interface Fn {
+  (...args: any): any;
+}
+
+export interface Call<T extends Fn> {
   arguments: Parameters<T>;
   result: ReturnType<T>;
   error: Error;
 }
 
-export function snoop<T extends (...args: any) => any>(
-  fn: T,
-): {
+export interface Snoop<T extends Fn> {
   fn: T;
   testID: number;
   called: boolean;
@@ -16,8 +18,10 @@ export function snoop<T extends (...args: any) => any>(
   calls: Call<T>[];
   firstCall: Call<T>;
   lastCall: Call<T>;
-  calledBefore: (other: typeof snoop) => boolean;
-  calledAfter: (other: typeof snoop) => boolean;
-  calledImmediatelyBefore: (other: typeof snoop) => boolean;
-  calledImmediatelyAfter: (other: typeof snoop) => boolean;
-};
+  calledBefore: (other: Snoop<T>) => boolean;
+  calledAfter: (other: Snoop<T>) => boolean;
+  calledImmediatelyBefore: (other: Snoop<T>) => boolean;
+  calledImmediatelyAfter: (other: Snoop<T>) => boolean;
+}
+
+export function snoop<T extends Fn>(fn: T): Snoop<T>;
