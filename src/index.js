@@ -2,7 +2,7 @@ let testIDCounter = 0;
 let callCounter = 0;
 const callMap = {};
 
-function snoop(fn) {
+function snoop(fn, context = null) {
   const testID = testIDCounter++;
   const calls = [];
 
@@ -13,7 +13,7 @@ function snoop(fn) {
       callMap[testID] = callMap[testID] || [];
 
       try {
-        result = fn.apply(null, args);
+        result = fn.apply(context, args);
 
         calls.push({
           result,
