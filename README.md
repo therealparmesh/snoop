@@ -15,6 +15,8 @@ npm install --save-dev snoop
 
 ## Usage
 
+Snoop collaborates with everyone.
+
 ### With [uvu](https://github.com/lukeed/uvu)
 
 ```js
