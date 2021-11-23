@@ -5,35 +5,21 @@
   "repository": "github:therealparmesh/snoop",
   "license": "MIT",
   "author": "Parmesh Krishen",
-  "main": "dist/index.js",
-  "unpkg": "dist/index.umd.js",
-  "module": "dist/index.module.js",
-  "source": "src/index.js",
+  "main": "src",
   "types": "types.d.ts",
-  "files": [
-    "src",
-    "dist",
-    "types.d.ts"
-  ],
   "scripts": {
-    "build": "bundt",
-    "prepublishOnly": "npm run build",
-    "version": "standard-version"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "prepare": "pro-commit",
+    "pro-commit:task": "pretty-quick --staged",
+    "release": "standard-version"
   },
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
   },
   "devDependencies": {
-    "bundt": "^1.0.2",
-    "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^3.0.0",
+    "pro-commit": "^1.2.1",
     "standard-version": "^9.0.0"
   }
 }
