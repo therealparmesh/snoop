@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/therealparmesh/snoop/compare/v1.0.4...v2.0.0) (2026-07-11)
+
+### ⚠ BREAKING CHANGES
+
+- the package is now distributed as ESM only.
+
+### Bug Fixes
+
+- correct spy declarations ([42c24b5](https://github.com/therealparmesh/snoop/commit/42c24b522932581e733dce95a8d9e5b71f70fad8))
+
+- migrate package tooling to Bun ([4f1c829](https://github.com/therealparmesh/snoop/commit/4f1c8297d640b21c25c4074b55759350598550be))
+
 ### [1.0.4](https://github.com/therealparmesh/snoop/compare/v1.0.2...v1.0.4) (2021-11-23)
 
 ### [1.0.3](https://github.com/therealparmesh/snoop/compare/v1.0.2...v1.0.3) (2021-11-23)
