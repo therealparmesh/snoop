@@ -2,7 +2,7 @@ let testIDCounter = 0;
 let callCounter = 0;
 const callMap = {};
 
-function snoop(fn) {
+export function snoop(fn) {
   const testID = testIDCounter++;
   const calls = [];
 
@@ -104,7 +104,3 @@ function snoop(fn) {
     },
   };
 }
-
-module.exports = {
-  snoop,
-};
