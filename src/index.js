@@ -26,6 +26,7 @@ export function snoop(fn) {
           arguments: args,
           error,
         });
+        throw error
       } finally {
         callMap[testID].push(callCounter++);
 
